@@ -9,16 +9,15 @@ import Registration from "./Registration";
 
 const Router = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/*" element={<Home/>}></Route>
-                <Route path="/account" element={<Account/>}></Route>
-                <Route path="/login" element={<Login />}></Route>
-                <Route path="/registration" element={<Registration />}></Route>
-                <Route path='*' element={ErrorPage}></Route>
-            </Routes>
-        </BrowserRouter>
-            
+
+        <Routes>
+            <Route path="/*" element={<Home/>}></Route>
+            <Route path="/account" element={<Account/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/registration" element={<Registration/>}></Route>
+            <Route path='*' element={ErrorPage}></Route>
+        </Routes>
+
 
     );
 };
