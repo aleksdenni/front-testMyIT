@@ -15,6 +15,7 @@
     "@types/react-icons": "^3.0.0",
     "@types/react-redux": "^7.1.25",
     "@types/react-router-dom": "^5.3.3",
+    "@types/redux-logger": "^3.0.9",
     "@types/sass": "^1.45.0",
     "@types/yup": "^0.32.0",
     "axios": "^1.4.0",
@@ -26,6 +27,7 @@
     "react-router": "^6.15.0",
     "react-router-dom": "^6.15.0",
     "redux": "^4.2.1",
+    "redux-logger": "^3.0.6",
     "sass": "^1.65.1",
     "yup": "^1.2.0"
   },
