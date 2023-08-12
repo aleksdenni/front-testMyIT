@@ -1,7 +1,6 @@
-import { axiosInstance} from "./instance";
-import {ILoginRequest, ILoginResponse} from "./types";
-import Endpoints from "./endpoints";
-import { AxiosPromise } from "axios"
+import * as auth from './auth'
 
-export const login = (params: ILoginRequest): AxiosPromise<ILoginResponse> =>
-    axiosInstance.post(Endpoints.AUTH.LOGIN, params)
+const api = {
+    auth
+}
+export default api
