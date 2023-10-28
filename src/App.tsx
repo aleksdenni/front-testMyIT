@@ -1,15 +1,14 @@
-
-import {BrowserRouter} from "react-router-dom";
-
+import Button from "@/components/button/button";
 
 function App() {
-
-
-    return (
-        <BrowserRouter>
-
-        </BrowserRouter>
-    )
+  return (
+    <>
+      <span>Hi</span>
+      <div>
+        <Button variant={"primary"}>Button</Button>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
