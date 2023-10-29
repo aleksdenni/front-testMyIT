@@ -1,23 +1,12 @@
-import { useForm } from "react-hook-form";
+import { Provider } from "react-redux";
 
-import Button from "@/components/button/button";
-import { TextField } from "@/components/text-field";
-import { Typography } from "@/components/typography";
+import { Router } from "@/router";
+import { store } from "@/services/store";
 
-function App() {
-  const { control } = useForm<any>({});
-
+export function App() {
   return (
-    <>
-      <span>Hi</span>
-      <div>
-        <Button variant={"primary"}>Button</Button>
-        <Typography variant={"h1"}>Typography</Typography>
-        <Typography variant={"body1"}>Typography</Typography>
-        <TextField control={control} name={"login"}></TextField>
-      </div>
-    </>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 }
-
-export default App;
