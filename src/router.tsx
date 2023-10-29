@@ -8,16 +8,14 @@ import {
 
 import Button from "@/components/button/button";
 import Layout from "@/components/layout/layout";
+import { SignInPage } from "@/pages/sign-in-page";
+import { useMeQuery } from "@/services/auth/auth.api";
 
 const publicRoutes: RouteObject[] = [
   {
-    element: <Button />,
+    element: <SignInPage />,
     path: "/sign-in",
   },
-  // {
-  //   element: <SignUp />,
-  //   path: "/sign-up",
-  // },
 ];
 
 const privateRoutes: RouteObject[] = [
@@ -50,7 +48,13 @@ export const Router = () => {
 };
 
 function PrivateRoutes() {
-  const isAuthenticated = true;
+  const { data, isLoading } = useMeQuery();
 
-  return isAuthenticated ? <Outlet /> : <Navigate to={"/login"} />;
+  if (isLoading) {
+    return <span>loading</span>;
+  }
+
+  const isAuthenticated = !!data;
+
+  return isAuthenticated ? <Outlet /> : <Navigate to={"/sign-in"} />;
 }

@@ -37,7 +37,7 @@ export const SignIn = (props: Props) => {
       <Typography as={"h1"} className={s.title} variant={"large"}>
         Sign In
       </Typography>
-      <form onSubmit={handleSubmit(props.onSubmit)}>
+      <form className={s.form} onSubmit={handleSubmit(props.onSubmit)}>
         <div className={s.fields}>
           <TextField
             control={control}
@@ -53,7 +53,7 @@ export const SignIn = (props: Props) => {
           />
         </div>
 
-        <Button disabled={props.isSubmitting} fullWidth type={"submit"}>
+        <Button disabled={props.isSubmitting} type={"submit"}>
           <Typography variant={"subtitle2"}>Sign In</Typography>
         </Button>
       </form>
