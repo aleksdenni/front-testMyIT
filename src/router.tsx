@@ -9,12 +9,17 @@ import {
 import Button from "@/components/button/button";
 import Layout from "@/components/layout/layout";
 import { SignInPage } from "@/pages/sign-in-page";
+import { SignUpPage } from "@/pages/sign-up-page";
 import { useMeQuery } from "@/services/auth/auth.api";
 
 const publicRoutes: RouteObject[] = [
   {
     element: <SignInPage />,
     path: "/sign-in",
+  },
+  {
+    element: <SignUpPage />,
+    path: "/sign-up",
   },
 ];
 
