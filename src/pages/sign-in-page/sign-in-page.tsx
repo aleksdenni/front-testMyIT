@@ -6,15 +6,16 @@ import { useLoginMutation, useMeQuery } from "@/services/auth/auth.api";
 import s from "./sign-in-page.module.scss";
 
 export const SignInPage = () => {
-  const { data, isLoading } = useMeQuery();
+  const { isError, isLoading } = useMeQuery();
   const [signIn, { isLoading: isSigningIn }] = useLoginMutation();
   const navigate = useNavigate();
+  const isAuthenticated = !isError;
 
   if (isLoading) {
     return <span className={s.loader}></span>;
   }
-  if (data) {
-    return <Navigate to={"/"} />;
+  if (isAuthenticated) {
+    return <Navigate replace to={"/"} />;
   }
 
   const handleSignIn = (data: signInFormValues) => {

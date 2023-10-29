@@ -3,6 +3,7 @@ import { Card } from "@/components/card";
 import { Typography } from "@/components/typography";
 
 import s from "./main-page.module.scss";
+
 export const MainPage = () => {
   return (
     <div className={s.container}>

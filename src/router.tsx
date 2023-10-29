@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-import Layout from "@/components/layout/layout";
+import { AppLayout } from "@/layouts";
 import { MainPage } from "@/pages/main-page";
 import { SignInPage } from "@/pages/sign-in-page";
 import { SignUpPage } from "@/pages/sign-up-page";
@@ -43,7 +43,8 @@ const router = createBrowserRouter([
         path: "*",
       },
     ],
-    element: <Layout />,
+    element: <AppLayout />,
+    errorElement: <div>Oooops Error</div>,
     path: "/",
   },
 ]);
@@ -53,13 +54,13 @@ export const Router = () => {
 };
 
 function PrivateRoutes() {
-  const { data, isLoading } = useMeQuery();
+  const { isError, isLoading } = useMeQuery();
 
   if (isLoading) {
     return <span>loading</span>;
   }
 
-  const isAuthenticated = !!data;
+  const isAuthenticated = !isError;
 
-  return isAuthenticated ? <Outlet /> : <Navigate to={"/sign-in"} />;
+  return isAuthenticated ? <Outlet /> : <Navigate replace to={"/sign-in"} />;
 }

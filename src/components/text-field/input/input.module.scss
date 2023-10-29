@@ -37,7 +37,6 @@
   all: unset;
   width: 100%;
   padding: 2px 5px;
-  background: var(--color-light-100);
 
   &:disabled::placeholder {
     color: var(--color-dark-300);

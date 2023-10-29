@@ -10,6 +10,13 @@ export const authService = baseApi.injectEndpoints({
         url: `v1/auth/login`,
       }),
     }),
+    logout: builder.mutation<void, void>({
+      invalidatesTags: ["Me"],
+      query: () => ({
+        method: "POST",
+        url: "v1/auth/logout",
+      }),
+    }),
     me: builder.query<any, void>({
       providesTags: ["Me"],
       query: () => "/v1/auth/me",
@@ -24,7 +31,12 @@ export const authService = baseApi.injectEndpoints({
   }),
 });
 
-export const { useLoginMutation, useMeQuery, useSignUpMutation } = authService;
+export const {
+  useLoginMutation,
+  useLogoutMutation,
+  useMeQuery,
+  useSignUpMutation,
+} = authService;
 export type LoginResponseType = {
   accessToken: string;
 };
