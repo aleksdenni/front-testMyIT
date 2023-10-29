@@ -6,8 +6,8 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-import Button from "@/components/button/button";
 import Layout from "@/components/layout/layout";
+import { MainPage } from "@/pages/main-page";
 import { SignInPage } from "@/pages/sign-in-page";
 import { SignUpPage } from "@/pages/sign-up-page";
 import { useMeQuery } from "@/services/auth/auth.api";
@@ -25,7 +25,7 @@ const publicRoutes: RouteObject[] = [
 
 const privateRoutes: RouteObject[] = [
   {
-    element: <Button />,
+    element: <MainPage />,
     path: "/",
   },
 ];

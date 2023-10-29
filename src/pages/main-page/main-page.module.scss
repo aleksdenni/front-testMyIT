@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 30%;
+
+  width: 80%;
+  min-height: 400px;
+  margin: 30px auto;
+
+  color: var(--color-dark-500) !important;
+
+  background: #cbfbe7;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+
+  padding: 50px;
+
+  color: var(--color-dark-500) !important;
+}
+
+.text {
+  color: var(--color-dark-500) !important;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background: #cbfbe7;
+}
+
+.bottom {
+  display: flex;
+  gap: 20%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
