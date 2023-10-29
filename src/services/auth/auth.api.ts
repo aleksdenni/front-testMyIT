@@ -14,14 +14,30 @@ export const authService = baseApi.injectEndpoints({
       providesTags: ["Me"],
       query: () => "/v1/auth/me",
     }),
+    signUp: builder.mutation<SignUpResponse, SignUpArgs>({
+      query: (body) => ({
+        body,
+        method: "POST",
+        url: "v1/auth/sign-up",
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useMeQuery } = authService;
+export const { useLoginMutation, useMeQuery, useSignUpMutation } = authService;
 export type LoginResponseType = {
   accessToken: string;
 };
 export type LoginArgs = {
   email: string;
   password: string;
+};
+type SignUpArgs = {
+  email: string;
+  password: string;
+};
+type SignUpResponse = {
+  email: string;
+  id: string;
+  name: string;
 };
